@@ -106,9 +106,9 @@ def sample_density(flow, redshift_smoothing=True):
         for i in range(nlogm):
             for j in range(nsfr):
                 prob_smooth[i,j,:] = convolve(prob_full[i,j,:],kernel,boundary='extend',preserve_nan=True)
-        return prob_full
-    else:
         return prob_smooth
+    else:
+        return prob_full
 
 def load_nf():
     """ This function instantiates the NormalizingFlow class
